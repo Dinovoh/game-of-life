@@ -1,3 +1,4 @@
+[![Build Status](http://localhost:8080/buildStatus/icon?job=game-of-life)](http://localhost:8080/job/game-of-life/)
 
 [![Build Status](http://jenkin-server.westeurope.cloudapp.azure.com:8080/buildStatus/icon?job=GoT)](http://jenkin-server.westeurope.cloudapp.azure.com:8080/job/GoT/)
 
