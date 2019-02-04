@@ -1,23 +1,30 @@
 Plain Link (with view)
 protected http://localhost:8080/job/game-of-life/badge/icon
+
 unprotected http://localhost:8080/buildStatus/icon?job=game-of-life
+
 Plain Link (without view)
 protected http://localhost:8080/job/game-of-life/badge/icon
+
 unprotected http://localhost:8080/buildStatus/icon?job=game-of-life
+
 Markdown (with view)
 protected [![Build Status](http://localhost:8080/job/game-of-life/badge/icon)](http://localhost:8080/job/game-of-life/)
+
 unprotected [![Build Status](http://localhost:8080/buildStatus/icon?job=game-of-life)](http://localhost:8080/job/game-of-life/)
+
 Markdown (without view)
 protected [![Build Status](http://localhost:8080/job/game-of-life/badge/icon)](http://localhost:8080/job/game-of-life)
+
 unprotected [![Build Status](http://localhost:8080/buildStatus/icon?job=game-of-life)](http://localhost:8080/job/game-of-life)
+
 HTML (with view)
 protected <a href='http://localhost:8080/job/game-of-life/'><img src='http://localhost:8080/job/game-of-life/badge/icon'></a>
 unprotected <a href='http://localhost:8080/job/game-of-life/'><img src='http://localhost:8080/buildStatus/icon?job=game-of-life'></a>
+
 HTML (without view)
 protected <a href='http://localhost:8080/job/game-of-life'><img src='http://localhost:8080/job/game-of-life/badge/icon'></a>
 unprotected <a href='http://localhost:8080/job/game-of-life'><img src='http://localhost:8080/buildStatus/icon?job=game-of-life'></a>
-____
-[![Build Status](http://jenkin-server.westeurope.cloudapp.azure.com:8080/buildStatus/icon?job=GoT)](http://jenkin-server.westeurope.cloudapp.azure.com:8080/job/GoT/)
 
 ## Building the project
 
