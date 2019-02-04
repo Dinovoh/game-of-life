@@ -16,7 +16,6 @@ pipeline {
     
     stage('jacoco') {
       steps {
-        echo 'Code Coverage'
         jacoco()
       }
     }    
