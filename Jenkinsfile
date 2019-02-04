@@ -26,8 +26,7 @@ pipeline {
         //build(quietPeriod: -2, job: '1')
         sh 'mvn -B -f /var/jenkins_home/jobs/game-of-life/workspace/pom.xml install'
       }
-    }  
-    stage('Post') { 
+      
       post {
         always {
           junit '**/target/*-reports/TEST-*.xml'
