@@ -14,11 +14,17 @@ pipeline {
       }
     }
     
-    stage('jacoco') {
+    stage('Sonar') {
       steps {
-        jacoco()
+        sh "mvn sonar:sonar -Dsonar.host.url=${env.SONARQUBE_HOST}"
       }
-    }    
+    }  
+    
+//    stage('jacoco') {
+//      steps {
+//       jacoco()
+//      }
+//    }    
     
     stage('Build') {
       steps {
