@@ -4,7 +4,7 @@
     <parent>
         <artifactId>gameoflife</artifactId>
         <groupId>com.wakaleo.gameoflife</groupId>
-        <version>0.0.56-SNAPSHOT</version>
+        <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>com.wakaleo.gameoflife</groupId>
     <artifactId>gameoflife-deploy</artifactId>
@@ -17,7 +17,7 @@
                 <version>1.0.1</version>
                 <configuration>
                     <container>
-                        <containerId>tomcat6x</containerId>
+                        <containerId>tomcat9x</containerId>
                         <type>remote</type>
                     </container>
                     <configuration>
@@ -54,9 +54,9 @@
     </dependencies>
     <properties>
         <target.version>RELEASE</target.version>
-        <tomcat.manager.url>http://localhost:8888/manager</tomcat.manager.url>
-        <tomcat.username>admin</tomcat.username>
-        <tomcat.password>password</tomcat.password>
+        <tomcat.manager.url>http://localhost:18080/manager</tomcat.manager.url>
+        <tomcat.username>tomcat</tomcat.username>
+        <tomcat.password>admin</tomcat.password>
     </properties>
     <profiles>
         <profile>
