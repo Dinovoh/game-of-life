@@ -14,11 +14,11 @@ pipeline {
       }
     }
     
-//    stage('Sonar') {
-//      steps {
-//        sh "mvn sonar:sonar -Dsonar.host.url=${env.SONARQUBE_HOST}"
-//      }
-//    }  
+    stage('Sonar') {
+      steps {
+        sh "mvn sonar:sonar -Dsonar.host.url=${env.SONARQUBE_HOST}"
+      }
+    }  
     
 //    stage('jacoco') {
 //      steps {
@@ -36,7 +36,7 @@ pipeline {
         always {
           junit '**/target/*-reports/TEST-*.xml'
           step([$class: 'CoberturaPublisher', coberturaReportFile: '**/coverage.xml'])
-          step([ $class: 'JacocoPublisher' ] )
+//        step([ $class: 'JacocoPublisher' ] )
         }
       }
     }
