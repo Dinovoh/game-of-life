@@ -36,7 +36,7 @@ The application is a very simple online version of [Conway's 'game of life'](htt
 
 ## Running the acceptance tests
 
-The acceptance tests are written using Webdriver and [Thucydides](http://thucydides.info). They are designed to run against a running server. Run the jetty instance as described about, then, in another window, go to the gameoflife-acceptance-tests directory and run `mvn clean verify`. The test reports will be generated in the `target/site/thucydides` directory.
+The acceptance tests are written using Webdriver and [Thucydides](http://thucydides.info). They are designed to run against a running server. Run the jetty instance as described about, then, in another window, go to the gameoflife-acceptance-tests directory and run `mvn clean verify -P<one of profiles (development/integration/staging/production) from pom>`. The test reports will be generated in the `target/site/thucydides` directory.
 
 ## The book
 
