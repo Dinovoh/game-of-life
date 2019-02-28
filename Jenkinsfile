@@ -27,11 +27,11 @@ pipeline {
 //      }
 //    }
 
-//    stage('Test coverage with jacoco') {
-//      steps {
-//       jacoco()
-//      }
-//    }          
+    stage('Test coverage with jacoco') {
+      steps {
+       jacoco()
+      }
+    }          
       
     stage('Static analysis with SonarQube') {
       steps {
@@ -49,7 +49,7 @@ pipeline {
         always {
           junit '**/target/*-reports/TEST-*.xml'
           step([$class: 'CoberturaPublisher', coberturaReportFile: '**/coverage.xml'])
-//        step([ $class: 'JacocoPublisher' ] )
+        step([ $class: 'JacocoPublisher' ] )
         }
       }
     }
