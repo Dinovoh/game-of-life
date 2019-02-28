@@ -46,7 +46,7 @@ pipeline {
       }
     }
     
-    stage('Build') {
+    stage('Post') {
       post {
         always {
           junit '**/target/*-reports/TEST-*.xml'
