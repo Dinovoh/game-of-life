@@ -7,12 +7,12 @@ pipeline {
   }
   
   stages {
-    
-    stage('Cloning Git') {
-        steps {
-          git([url: 'https://github.com/Dinovoh/game-of-life.git', branch: 'deploy'])
-        }
-    }
+//Uses Poll SCM schedule without a regard for changes. Starts build even if there are no changes     
+//    stage('Cloning Git') {
+//        steps {
+//          git([url: 'https://github.com/Dinovoh/game-of-life.git', branch: 'deploy'])
+//        }
+//    }
     
     stage('Compile') {
       steps {
