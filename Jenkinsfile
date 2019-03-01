@@ -8,6 +8,12 @@ pipeline {
   
   stages {
     
+    stage('Cloning Git') {
+        steps {
+          git([url: 'https://github.com/Dinovoh/game-of-life.git', branch: 'deploy'])
+        }
+    }
+    
     stage('Compile') {
       steps {
         //build(quietPeriod: -2, job: '1')
