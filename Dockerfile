@@ -14,4 +14,4 @@ ENV app.version=${APP_VERSION} \
     env.JOB_NAME=${ENV_JOB_NAME} \
     env.BUILD_NUMBER=${EVN_BUILD_NUMBER}
 
-COPY ~/.m2/repository/com/wakaleo/gameoflife/gameoflife-web/${APP_VERSION}/gameoflife-web-${APP_VERSION}.war $CATALINA_HOME/webapps/gameoflife.war
+COPY gameoflife-web-${APP_VERSION}.war $CATALINA_HOME/webapps/gameoflife.war
