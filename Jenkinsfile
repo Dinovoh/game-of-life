@@ -89,7 +89,6 @@ pipeline {
     stage('Run Application') {
       steps {
         sh '''
-        docker stop tomcat_game-of-life
         docker run --rm -d -p 18080:8080 --name tomcat_game-of-life dinovoh/gameoflife:`git rev-parse --short HEAD`
         '''
       }
