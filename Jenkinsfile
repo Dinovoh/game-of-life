@@ -5,6 +5,7 @@ pipeline {
   
   environment {
     PROJECT_VERSION = readMavenPom().getVersion()
+    //withCredentials([string(credentialsId: 'docker-hub_username', variable: 'TOKEN')])
   }
 //  tools {
 //    jdk 'jdk8'
@@ -34,7 +35,7 @@ pipeline {
       steps {
         //build(quietPeriod: -2, job: '1')
         sh '''
-        echo "${PROJECT_VERSION}"
+        echo $mysecret
         mvn -B -f $WORKSPACE/pom.xml compile
         '''
       }
@@ -76,18 +77,20 @@ pipeline {
       }
     }  
   
-    stage('Pack in docker') {
+    stage('Pack in docker and push to docker-hub registry') {
       steps {
         sh '''
-        docker build --build-arg APP_VERSION=${PROJECT_VERSION} -t gameoflife:`git rev-parse --short HEAD` .
+        docker build --no-cache --build-arg APP_VERSION=${PROJECT_VERSION} -t dinovoh/gameoflife:`git rev-parse --short HEAD` .
+        docker push dinovoh/gameoflife:`git rev-parse --short HEAD`
         '''
       }
     }
     
-    stage('Push to docker-hub registry') {
+    stage('Run Application') {
       steps {
         sh '''
-        echo "Test"
+        docker stop tomcat_game-of-life
+        docker run --rm -d -p 18080:8080 --name tomcat_game-of-life dinovoh/gameoflife:`git rev-parse --short HEAD`
         '''
       }
     }    
